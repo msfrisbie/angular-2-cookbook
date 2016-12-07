@@ -1,0 +1,1 @@
+export const article = "Cool story, bro";
