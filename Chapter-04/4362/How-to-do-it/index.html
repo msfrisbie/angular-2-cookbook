@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/systemjs@0.19.39/dist/system.src.js"></script>
+    <script src="system-config.js"></script>
+  </head>
+  <body>
+    <script>
+      System.import('system-config.js')
+        .then(function() {
+          System.import('main.ts');
+        });
+    </script>
+  </body>
+</html>

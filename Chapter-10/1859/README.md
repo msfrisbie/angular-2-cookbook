@@ -1,0 +1,1 @@
+# Configuring the Angular 2 Renderer to use Web Workers

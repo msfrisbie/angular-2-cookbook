@@ -1,0 +1,1 @@
+# Configuring an application to use lazy loading

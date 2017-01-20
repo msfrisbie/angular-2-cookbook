@@ -1,0 +1,1 @@
+# Configuring components to use explicit change detection with OnPush

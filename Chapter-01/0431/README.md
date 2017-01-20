@@ -1,0 +1,1 @@
+# Componentizing Directives Using controllerAs Encapsulation
