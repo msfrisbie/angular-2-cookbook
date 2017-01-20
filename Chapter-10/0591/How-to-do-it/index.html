@@ -1,0 +1,48 @@
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.6.26/zone.js"></script>
+
+<button id="button">Click me</button>
+<button id="add">Add listener</button>
+<button id="remove">Remove listener</button>
+<script>
+  var button = document.getElementById('button');
+  var add = document.getElementById('add');
+  var remove = document.getElementById('remove');
+
+  Zone.current.fork({
+    onScheduleTask: function(zoneDelegate, zone, targetZone, task) {
+      console.log('schedule');
+      zoneDelegate
+        .scheduleTask(targetZone, task);
+    },
+    onCancelTask: function(zoneDelegate, zone, targetZone, task) {
+      console.log('cancel');
+      zoneDelegate
+        .cancelTask(targetZone, task);
+    },
+    onInvokeTask: function(zoneDelegate, zone, targetZone, task,
+                           applyThis, applyArgs) {
+      console.log('invoke');
+      zoneDelegate
+        .invokeTask(targetZone, task, applyThis, applyArgs);
+    },
+    onHasTask: function(zoneDelegate, zone, targetZone, isEmpty) {
+      console.log('has');
+      zoneDelegate.hasTask(targetZone, isEmpty);
+    }
+  }).run(function() {
+    var clickCallback = function() {
+      console.log('click!');
+    };
+    setInterval(function() {
+      console.log('set interval!');
+    }, 1000);
+    
+    add.addEventListener('click', function() {
+     button.addEventListener('click', clickCallback);
+    });
+    remove.addEventListener('click', function() {
+      button.removeEventListener('click', clickCallback);
+    });
+  });
+</script>
