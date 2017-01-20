@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "test": "concurrently 'npm run tsc:w' 'karma start karma.conf.js'",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.5.35",
+    "concurrently": "^3.1.0",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-webpack": "^1.8.0",
+    "typescript": "^2.0.3",
+    "webpack": "^1.13.2"
+  }
+}
